@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiWork - On-Demand Task Assistance</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .logo-color {
+            color: #29B6F6;
+        }
+        .btn-custom {
+            background-color: #50add8;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #1e90d4;
+        }
+        .about-talent {
+            background-color: #29B6F6;
+        }
+        .bg-feature {
+            background-color: #1e90d4;
+        }
+        .bg-faq {
+            background-color: #66CBF7;
+        }
+        .plus-icon {
+            cursor: pointer;
+        }
+
+        .plus-icon:hover {
+            text-decoration: underline;
+        }
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: calc(100% - 2rem);
+            margin: 0 1rem;
+            max-width: 300px;
+            flex: 1 1 0;
+            position: relative;
+            overflow: hidden;
+            height: 300px; /* Adjust the height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(0, 128, 0, 0.6);
+        }
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+        .feature-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card img {
+            border-radius: 0.5rem;
+            max-height: 200px; /* Adjust the image height */
+            object-fit: cover;
+        }
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(144, 238, 144, 1);
+            
+        }
+        .feature-card h2 {
+            margin-bottom: -4.25rem;
+        }
+        .feature-card p {
+            margin-top: 0.25rem;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        span {
+            color: #1e90d4;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-lg mb-16 border-b border-gray-300">
+    <div class="mx-auto px-6 lg:px-12 container">
+        <div class="flex justify-between items-center">
+            <a href="#" class="flex items-center py-5 text-gray-700">
+                <span class="text-2xl font-bold logo-color">flexiwork</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#features" class="py-5 text-gray-700">Features</a>
+                <a href="#how-it-works" class="py-5 text-gray-700">How It Works</a>
+                <a href="#faq" class="py-5 text-gray-700">FAQ</a>
+                <a href="#sign-up" class="py-2 px-4 btn-custom rounded">Sign Up</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu hidden md:hidden">
+        <a href="#features" class="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
+        <a href="#how-it-works" class="block py-2 px-4 text-sm hover:bg-gray-200">How It Works</a>
+        <a href="#faq" class="block py-2 px-4 text-sm hover:bg-gray-200">FAQ</a>
+        <a href="#sign-up" class="block py-2 px-4 text-sm hover:bg-gray-200">Sign Up</a>
+    </div>
+</nav>
+
+<!-- Hero-section -->
+<section id="hero" class="container bg-white mx-auto text-black mb-8 md:mb-32 px-6 lg:px-12 relative" style="max-width: 1405px;">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="w-full md:w-1/2 mb-12 md:mb-0">
+            <h1 class="text-4xl font-bold mb-4">Find Work <span>When</span> You Want, Help When You <span>When</span> It</h1>
+            <p class="text-lg mb-8">FlexiWork connects you with on-demand task assistance and job opportunities, empowering you to get things done and make money effortlessly.</p>
+            <a href="#sign-up" class="btn-custom w-full md:w-1/3 px-6 py-4 rounded block text-center">Get Started</a>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end items-center">
+            <img src="images/cleaning-service-bro.png" alt="Boy Cleaning" class="w-3/4 md:w-full h-auto">
+        </div>
+    </div>
+</section>
+
+<!-- About Us Content -->
+<h2 class="text-4xl md:text-5xl text-black mb-0 font-bold text-center">For Talents and Employers</h2>
+<section id="how-it-works" class="bg-white mx-auto relative mb-8 md:mb-60 rounded-lg px-6 lg:px-12 py-12" style="max-width: 1405px;">
+    <img src="images/3d-casual-life-serviceman-with-beard.png" alt="Serviceman" class="hidden md:block absolute w-1/3 md:w-1/4 h-auto mt-12 md:mt-0 md:absolute md:-top-16 z-10">
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden lg:ml-80">
+        <!-- For Talents and Employers Section -->
+        <div class="p-4 bg-green-600 flex flex-col md:flex-row items-center md:justify-between">
+            <div class="text-white ml-0 md:mt-0">
+                <h2 class="text-3xl font-bold mb-4">For Talents and Employers</h2>
+                <p class="text-white mb-4">
+                    At FlexiWork, we celebrate your unique skills. Our platform connects talents with flexible job opportunities and employers with skilled individuals. Whether you seek a side gig or need extra hands for a project, FlexiWork bridges the gap efficiently and effortlessly.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 p-12">
+            <div class="bg-green-500 p-4 shadow-md hover:bg-green-400 rounded-lg w-full md:w-1/2 text-center">
+                <a href="#sign-up"><h2 class="text-3xl font-bold text-white mb-4">Sign Up As a Talent</h2></a>
+            </div>
+            <div class="bg-green-500 p-4 shadow-md hover:bg-green-400 rounded-lg w-full md:w-1/2 text-center">
+                <a href="#sign-up"><h2 class="text-3xl font-bold text-white mb-4">Sign Up As a Employer</h2></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<h2 id="features" class="text-4xl md:text-5xl text-black mb-12 font-bold text-center">Our Features</h2>
+<section class="container bg-white flex flex-col md:flex-row items-center justify-between mx-auto text-black mb-16 md:mb-40 px-6 lg:px-12" style="max-width: 1405px;">
+    <div class="w-full md:w-1/2 mb-12 md:mb-0">
+        <h2 class="text-4xl md:text-5xl text-black mb-12 font-bold">Unlimited <span>work opportunities</span></h2>
+        <p class="text-lg mb-8">FlexiWork offers you unlimited work opportunities<br>tailored to your skills and availability.</p>
+        <a href="#sign-up" class="btn-custom w-full md:w-1/3 px-6 py-4 rounded block text-center">Get a Work Now</a>
+    </div>
+    <!-- Flex container for cards -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+            <i class="fas fa-clock text-green-600 text-center feature-icon"></i>
+            <h2 class="text-lg text-black font-bold text-center">Flexible Scheduling</h2>
+            <p class="text-grey text-center">Choose jobs that fit your schedule. Flexibility is at the heart of what we offer.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+            <i class="fas fa-wallet text-green-600 text-center feature-icon"></i>
+            <h2 class="text-lg text-black font-bold text-center">Secure Payments</h2>
+            <p class="text-black text-center">Get paid securely and on time for every task you complete.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+            <i class="fas fa-user-check text-green-600 text-center feature-icon"></i>
+            <h2 class="text-lg text-black font-bold text-center">Verified Employers</h2>
+            <p class="text-black text-center">Work with trusted and verified employers who value your skills.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+            <i class="fa-regular fa-handshake text-green-600 text-center feature-icon"></i>
+            <h2 class="text-lg text-black font-bold text-center">NEGOTIATE PRICE</h2>
+            <p class="text-black text-center">Negotiate the best rates for your tasks and projects</p>
+        </div>
+    </div>
+</section>
+
+<!-- Frequently Asked Questions Section -->
+<section id="faq" class="bg-white py-12 mb-20">
+    <div class="container mx-auto px-6 lg:px-12">
+        <h2 class="text-4xl md:text-5xl text-center font-bold text-gray-800 mb-8">Frequently Asked Questions</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="bg-faq shadow-md rounded-lg p-6 faq-item">
+                <h3 class="text-xl font-bold mb-2 faq-question flex items-center justify-between">What is FlexiWork? <span class="plus-icon">+</span></h3>
+                <p class="faq-answer hidden">FlexiWork is a platform that connects individuals seeking flexible work opportunities with employers looking for skilled talents to complete various tasks and projects.</p>
+            </div>
+            <div class="bg-faq shadow-md rounded-lg p-6 faq-item">
+                <h3 class="text-xl font-bold mb-2 faq-question flex items-center justify-between">How do I sign up? <span class="plus-icon">+</span></h3>
+                <p class="faq-answer hidden">Signing up is simple! Just click on the "Sign Up" button, fill out the registration form with your details, and choose whether you want to sign up as a talent or an employer.</p>
+            </div>
+            <div class="bg-faq shadow-md rounded-lg p-6 faq-item">
+                <h3 class="text-xl font-bold mb-2 faq-question flex items-center justify-between">Is there a fee to use FlexiWork? <span class="plus-icon">+</span></h3>
+                <p class="faq-answer hidden">Signing up and creating a profile on FlexiWork is free. However, we may charge a small service fee on transactions made through the platform. More details can be found in our pricing policy.</p>
+            </div>
+            <div class="bg-faq shadow-md rounded-lg p-6 faq-item">
+                <h3 class="text-xl font-bold mb-2 faq-question flex items-center justify-between">How can I post a job or task? <span class="plus-icon">+</span></h3>
+                <p class="faq-answer hidden">Once you're signed up as an employer, you can post a job or task by logging into your account, navigating to the "Post a Job" section, and filling out the necessary details about the task or job.</p>
+            </div>
+            <div class="bg-faq shadow-md rounded-lg p-6 faq-item">
+                <h3 class="text-xl font-bold mb-2 faq-question flex items-center justify-between">How do I find work as a talent? <span class="plus-icon">+</span></h3>
+                <p class="faq-answer hidden">After signing up as a talent, you can browse available jobs and tasks on the platform. You can apply to those that match your skills and negotiate terms directly with employers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sign-Up Form -->
+<h2 id="sign-up" class="text-4xl md:text-5xl text-center mb-6 font-bold text-gray-800">Sign Up</h2>
+<section class="container bg-white flex flex-col md:flex-row items-center justify-between mx-auto text-black mb-16 md:mb-32 px-6 lg:px-2" style="max-width: 1405px;">
+    <div class="w-full md:w-1/2 flex justify-center md:justify-center">
+        <img src="images/sign-up-image.png" alt="Boy Cleaning" class="w-full md:w-3/4 h-auto md:mt-6 items-center justify-center">
+    </div>
+    <div class="container mx-auto px-6 lg:px-12"> 
+        <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
+            <div class="px-6 py-8">
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSfiEttESGaYsyNZCLNmZFhUjab06tZimDNYN5HQ5Ws0sMWBTg/formResponse" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" name="entry.707692163" id="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" name="entry.657136281" id="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" name="entry.355110669" id="phone" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="role" class="block text-sm font-medium text-gray-700">Sign Up As</label>
+                        <select id="role" name="entry.1773991262" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="Talent">Talent</option>
+                            <option value="Employer">Employer</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full btn-custom px-6 py-3 rounded-md text-lg font-medium">Sign Up</button>
+                    </div>
+                </form>                    
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 py-12 mt-12">
+    <div class="container mx-auto px-6 lg:px-12 text-center text-white">
+        <p>&copy; 2024 FlexiWork. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            const answer = question.nextElementSibling;
+            const plusIcon = question.querySelector('.plus-icon');
+
+            question.addEventListener('click', () => {
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    plusIcon.textContent = '-';
+                } else {
+                    answer.classList.add('hidden');
+                    plusIcon.textContent = '+';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
